@@ -23,4 +23,25 @@ public class StringUtils {
         // Minimal implementation to make tests pass
         return str == null || str.isEmpty();
     }
+
+    /**
+     * Reverses a string.
+     *
+     * @param str the string to reverse
+     * @return the reversed string, or null if input is null
+     */
+    public static String reverse(String str) {
+        // Handle null input
+        if (str == null) {
+            return null;
+        }
+
+        // Handle empty string
+        if (str.isEmpty()) {
+            return "";
+        }
+
+        // Reverse the string using StringBuilder for efficiency
+        return new StringBuilder(str).reverse().toString();
+    }
 }
