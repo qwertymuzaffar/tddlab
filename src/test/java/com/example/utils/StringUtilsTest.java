@@ -54,4 +54,49 @@ class StringUtilsTest {
         // Then: result should be false
         assertFalse(result, "isEmpty() should return false for non-empty string");
     }
+
+    /**
+     * Test: reverse() should return null for null input
+     */
+    @Test
+    void reverse_ShouldReturnNull_WhenInputIsNull() {
+        // Given: a null string
+        String input = null;
+
+        // When: reversing the string
+        String result = StringUtils.reverse(input);
+
+        // Then: result should be null
+        assertNull(result, "reverse() should return null for null input");
+    }
+
+    /**
+     * Test: reverse() should return empty string for empty input
+     */
+    @Test
+    void reverse_ShouldReturnEmpty_WhenInputIsEmpty() {
+        // Given: an empty string
+        String input = "";
+
+        // When: reversing the string
+        String result = StringUtils.reverse(input);
+
+        // Then: result should be empty
+        assertEquals("", result, "reverse() should return empty string for empty input");
+    }
+
+    /**
+     * Test: reverse() should reverse normal string
+     */
+    @Test
+    void reverse_ShouldReverseString_WhenInputIsValid() {
+        // Given: a normal string
+        String input = "hello";
+
+        // When: reversing the string
+        String result = StringUtils.reverse(input);
+
+        // Then: result should be reversed
+        assertEquals("olleh", result, "reverse() should return reversed string");
+    }
 }
